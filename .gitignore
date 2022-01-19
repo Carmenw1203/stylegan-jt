@@ -1,1 +1,2 @@
-*.model
+checkpoints/face_80w_ckpt/*.model
+checkpoints/symbol_80w_ckpt/*.model
