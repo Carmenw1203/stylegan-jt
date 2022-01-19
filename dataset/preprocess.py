@@ -2,14 +2,19 @@ import os
 import cv2
 import numpy as np
 import pathlib
+import argparse
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='create pictures of different resolutions')
+    parser.add_argument('--input_dir', default='./data/FFHQ_data/FFHQ_128',type=str, help='save result pics')
+    parser.add_argument('--output_dir', default='./data/FFHQ_data/FFHQ_',type=str, help='save result pics')
     # src_dir = './data/symbol_data/color_symbol_7k_128'
-    src_dir = './data/FFHQ_data/FFHQ_128'
+    args = parser.parse_args()
+    src_dir = args.input_dir
     downsample_size = [8,16,32,64]
     target_dir = []
     for i in range(len(downsample_size)):
-        target_dir.append('./data/FFHQ_data/FFHQ_' + str(downsample_size[i]))
+        target_dir.append(args.output_dir + str(downsample_size[i]))
         pathlib.Path(target_dir[i]).mkdir(parents=True,exist_ok=True)
         
     for item in os.listdir(src_dir):

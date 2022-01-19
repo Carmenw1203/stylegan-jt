@@ -1,0 +1,1 @@
+python ./dataset/preprocess.py --input_dir ./data/symbol_data/color_symbol_7k_128 --output_dir ./data/symbol_data/color_symbol_7k_
