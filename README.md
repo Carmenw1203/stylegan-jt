@@ -60,17 +60,13 @@ After generate latent space interpolations results and save them, you can just r
 
 Here we also show some demo videos.
 
-Symbol training process
-<center>
-<table><tr>
-    <video src='output/video/interpolation_process.mp4' width='100%'></video>
-</tr></table>
-</center>
-Symbol interpolation process
+[Symbol training process](output/video/interpolation_process.mp4)
 
-FFHQ training process
+[Symbol interpolation process](output/video/train_process.mp4)
 
-FFHQ interpolation process
+[FFHQ training process](output/video_face/face_interpolation_process.mp4)
+
+[FFHQ interpolation process](output/video_face/face_train_process.mp4)
 
 ## Reference
 
