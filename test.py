@@ -5,6 +5,7 @@ from model.model import StyledGenerator
 jt.flags.use_cuda = True
 import argparse
 import pathlib
+import os
 
 @jt.no_grad()
 def style_mixing(generator, step, mean_style, n_source, n_target):
@@ -80,6 +81,7 @@ def inference(args):
         )
     delta_code = (last_code - first_code)/inter_times
     pathlib.Path(args.output_dir).mkdir(parents=True,exist_ok=True)
+    pathlib.Path(args.stylemixing_dir).mkdir(parents=True,exist_ok=True)
     for i in range(inter_times):
         image = generator(
             first_code + delta_code*i,
@@ -87,7 +89,7 @@ def inference(args):
             alpha=1,
             mean_style=mean_style,
             style_weight=0.7,
-            mixing_range=(0, 1),
+            # mixing_range=(0, 1),
         )
         jt.save_image(
             image, os.path.join(args.output_dir,f'sample_{i}.png'), nrow=10, normalize=True, range=(-1, 1)
