@@ -44,9 +44,10 @@ Here we show some latent space interpolations results on these two dataset. The 
     <td><img src='output/face_style_mixing_80_80w/sample_mixing_0.png' width='100%'></td>
 </tr></table>
 </center>
+
 <center>
 <table><tr>
-    <td><img src='output/style_mixing_80_80w/sample_mixing_0.png' width='100%'></td>
+    <td><img src='output/style_mixing_80_80w/sample_mixing_0.jpg' width='100%'></td>
 </tr></table>
 </center>
 
