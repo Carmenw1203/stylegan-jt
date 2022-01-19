@@ -54,8 +54,23 @@ The following are two samples.
     <td><img src='output/interpolation_80_80w/sample_0.png' width='100%'></td>
 </tr></table>
 </center>
-## Demo
 
+## Demo
+After generate latent space interpolations results and save them, you can just run the following instructions to generate videos to show the training process and interpolation process.
+
+Here we also show some demo videos.
+
+Symbol training process
+<center>
+<table><tr>
+    <video src='output/video/interpolation_process.mp4' width='100%'></video>
+</tr></table>
+</center>
+Symbol interpolation process
+
+FFHQ training process
+
+FFHQ interpolation process
 
 ## Reference
 
