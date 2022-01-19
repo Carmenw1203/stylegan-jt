@@ -93,6 +93,22 @@ def inference(args):
             image, os.path.join(args.output_dir,f'sample_{i}.png'), nrow=10, normalize=True, range=(-1, 1)
         )
     
+    with jt.no_grad():
+        img = generator(
+            jt.randn(25, 512),
+            step=step,
+            alpha=1,
+            mean_style=mean_style,
+            style_weight=0.7,
+        )
+    jt.save_image(img, os.path.join(args.stylemixing_dir,f'sample.jpg'), nrow=5, normalize=True, range=(-1, 1))
+    print(img[0,:,0,0])
+    for j in range(20):
+        img = style_mixing(generator, step, mean_style, 5, 10)
+        jt.save_image(
+            img, os.path.join(args.stylemixing_dir,f'sample_mixing_{j}.jpg'), nrow=5 + 1, normalize=True, range=(-1, 1)
+        )
+    
 
 
 if __name__ == '__main__':
@@ -100,6 +116,7 @@ if __name__ == '__main__':
     parser.add_argument('--ckpt', default='./checkpoints/symbol_80w_ckpt/800000.model',type=str,help='checkpoint path')
     parser.add_argument('--resolution',default=128,type=int)
     parser.add_argument('--output_dir',default='./output/interpolation_80_80w',type=str)
+    parser.add_argument('--stylemixing_dir',default='./output/style_mixing_80_80w',type=str)
     args = parser.parse_args()
     
     inference(args)
