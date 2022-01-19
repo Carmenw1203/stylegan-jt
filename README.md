@@ -46,7 +46,7 @@ Here we show some latent space interpolations results on these two dataset. The 
 </tr></table>
 </center>
 
-And we also generate some latent space interpolations results from a temporal view in order to generate a demo video, these pictures will be saved in [output/interpolation_80_80w](output/interpolation_80_80w)and [output/face_interpolation_80_80w](output/face_interpolation_80_80w).
+And we also generate some latent space interpolations results from a temporal view in order to generate a demo video, these pictures will be saved in [output/interpolation_80_80w](output/interpolation_80_80w) and [output/face_interpolation_80_80w](output/face_interpolation_80_80w).
 The following are two samples.
 <center>
 <table><tr>
